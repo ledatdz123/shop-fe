@@ -1,0 +1,31 @@
+.content {
+    margin: auto 160px;
+}
+.ant-menu-horizontal,
+.ant-menu-item::after,
+.ant-menu-submenu::after {
+    border: none !important;
+}
+.header_wrapper {
+    width: 100%;
+    height: 150px;
+    background-color: gold;
+}
+.header_top {
+    height: 35px;
+    background-color: gold;
+    display: flex;
+    justify-content: space-between;
+}
+.header_top_right {
+    display: flex;
+}
+.header_mid {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_bot {
+}
