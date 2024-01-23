@@ -10,21 +10,23 @@ import {
     ShoppingCartOutlined,
 } from '@ant-design/icons';
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import SearchHeader from '@/components/Search';
 function Header() {
     const [languageName, setLanguageName] = useState('Tiếng Việt');
     const handleChange = (e) => {
         console.log(`selected ${e}`);
     };
+    const navigate = useNavigate();
     const itemTranport = [
         {
-            key: 'jst',
-            label: 'J&T Express',
+            key: '1',
+            label: <div>abc</div>,
             value: 'jst',
         },
         {
             key: '2',
-            label: 'GHTK',
-            value: 'jst',
+            label: <div onClick={() => navigate('/product')}>aa</div>,
         },
     ];
     const menuLeft = [
@@ -63,6 +65,220 @@ function Header() {
             icon: [<FacebookOutlined />, <InstagramOutlined />],
         },
     ];
+
+    const menu = [
+        {
+            key: 'transport',
+            label: (
+                <Dropdown
+                    onChange={handleChange}
+                    menu={{
+                        items: itemTranport,
+                    }}
+                    arrow
+                >
+                    <Space>Điện thoại</Space>
+                </Dropdown>
+            ),
+        },
+        {
+            key: 'download',
+            label: (
+                <Dropdown
+                    onChange={handleChange}
+                    menu={{
+                        items: itemTranport,
+                    }}
+                    arrow
+                >
+                    <Space>Laptop</Space>
+                </Dropdown>
+            ),
+        },
+        {
+            key: 'connect',
+            label: (
+                <Dropdown
+                    onChange={handleChange}
+                    menu={{
+                        items: itemTranport,
+                    }}
+                    arrow
+                >
+                    <Space>Tablet</Space>
+                </Dropdown>
+            ),
+        },
+        {
+            key: 'connect',
+            label: (
+                <Dropdown
+                    onChange={handleChange}
+                    menu={{
+                        items: itemTranport,
+                    }}
+                    arrow
+                >
+                    <Space>Phụ kiện</Space>
+                </Dropdown>
+            ),
+        },
+        {
+            key: 'connect',
+            label: (
+                <Dropdown
+                    onChange={handleChange}
+                    menu={{
+                        items: itemTranport,
+                    }}
+                    arrow
+                >
+                    <Space>Phụ kiện</Space>
+                </Dropdown>
+            ),
+        },
+        {
+            key: 'connect',
+            label: (
+                <Dropdown
+                    onChange={handleChange}
+                    menu={{
+                        items: itemTranport,
+                    }}
+                    arrow
+                >
+                    <Space>Phụ kiện</Space>
+                </Dropdown>
+            ),
+        },
+        {
+            key: 'connect',
+            label: (
+                <Dropdown
+                    onChange={handleChange}
+                    menu={{
+                        items: itemTranport,
+                    }}
+                    arrow
+                >
+                    <Space>Phụ kiện</Space>
+                </Dropdown>
+            ),
+        },
+        {
+            key: 'connect',
+            label: (
+                <Dropdown
+                    onChange={handleChange}
+                    menu={{
+                        items: itemTranport,
+                    }}
+                    arrow
+                >
+                    <Space>Phụ kiện</Space>
+                </Dropdown>
+            ),
+        },
+        {
+            key: 'connect',
+            label: (
+                <Dropdown
+                    onChange={handleChange}
+                    menu={{
+                        items: itemTranport,
+                    }}
+                    arrow
+                >
+                    <Space>Phụ kiện</Space>
+                </Dropdown>
+            ),
+        },
+        {
+            key: 'connect',
+            label: (
+                <Dropdown
+                    onChange={handleChange}
+                    menu={{
+                        items: itemTranport,
+                    }}
+                    arrow
+                >
+                    <Space>Phụ kiện</Space>
+                </Dropdown>
+            ),
+        },
+        {
+            key: 'connect',
+            label: (
+                <Dropdown
+                    onChange={handleChange}
+                    menu={{
+                        items: itemTranport,
+                    }}
+                    arrow
+                >
+                    <Space>Phụ kiện</Space>
+                </Dropdown>
+            ),
+        },
+        {
+            key: 'connect',
+            label: (
+                <Dropdown
+                    onChange={handleChange}
+                    menu={{
+                        items: itemTranport,
+                    }}
+                    arrow
+                >
+                    <Space>Phụ kiện</Space>
+                </Dropdown>
+            ),
+        },
+        {
+            key: 'connect',
+            label: (
+                <Dropdown
+                    onChange={handleChange}
+                    menu={{
+                        items: itemTranport,
+                    }}
+                    arrow
+                >
+                    <Space>Phụ kiện</Space>
+                </Dropdown>
+            ),
+        },
+        {
+            key: 'connect',
+            label: (
+                <Dropdown
+                    onChange={handleChange}
+                    menu={{
+                        items: itemTranport,
+                    }}
+                    arrow
+                >
+                    <Space>Phụ kiện</Space>
+                </Dropdown>
+            ),
+        },
+        {
+            key: 'connect',
+            label: (
+                <Dropdown
+                    onChange={handleChange}
+                    menu={{
+                        items: itemTranport,
+                    }}
+                    arrow
+                >
+                    <Space>Phụ kiện</Space>
+                </Dropdown>
+            ),
+        },
+    ];
+
     const handleDropdownItemClick = (e) => {
         if (e.key === 'vn') {
             setLanguageName('Tiếng Việt');
@@ -119,8 +335,22 @@ function Header() {
             ),
         },
     ];
-    const { Search } = Input;
-    const onSearch = (value, _e, info) => console.log(info?.source, value);
+    const [search, setSearch] = useState('');
+    const onSearch = (value, _e, info) => {
+        console.log(info?.source, value);
+        setSearch(value);
+    };
+    console.log('search', search);
+    const options = [
+        {
+            label: 'One',
+            value: 'one',
+        },
+        {
+            label: 'Two',
+            value: 'two',
+        },
+    ];
     return (
         <div className="header_wrapper">
             <div className="header content">
@@ -195,14 +425,23 @@ function Header() {
                             <Image src={UserImage} preview={false} width={'50px'} height={'100%'}></Image>
                             <Image src={UserImage} preview={false} width={'50px'} height={'100%'}></Image>
                         </div>
-                        <span>reactshop</span>
                     </div>
-                    <Search
-                        style={{ width: '100%', margin: '0 35px' }}
-                        size="large"
-                        placeholder="input text"
-                        onSearch={onSearch}
-                    ></Search>
+                    <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <SearchHeader options={options} />
+                        <div>
+                            <Menu
+                                mode="horizontal"
+                                style={{
+                                    backgroundColor: 'gold',
+                                    border: 'none',
+                                    height: '35px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                }}
+                                items={menuLeft}
+                            ></Menu>
+                        </div>
+                    </div>
                     <Space>
                         <Dropdown
                             menu={{
@@ -221,13 +460,27 @@ function Header() {
                             }}
                             arrow
                         >
-                            <Badge count={1} style={{ marginRight: '25px' }}>
-                                <ShoppingCartOutlined style={{ fontSize: '30px', marginRight: '25px' }} />
+                            <Badge count={1} style={{ marginRight: '40px' }}>
+                                <ShoppingCartOutlined style={{ fontSize: '30px', marginRight: '40px' }} />
                             </Badge>
                         </Dropdown>
                     </Space>
                 </div>
-                <div className="header_bottom">aa</div>
+                <div className="header_bottom">
+                    <div style={{ padding: '25px 25px 0 25px' }}>
+                        <Menu
+                            mode="horizontal"
+                            style={{
+                                backgroundColor: 'gold',
+                                border: 'none',
+                                height: '35px',
+                                display: 'flex',
+                                alignItems: 'center',
+                            }}
+                            items={menu}
+                        ></Menu>
+                    </div>
+                </div>
             </div>
         </div>
     );
