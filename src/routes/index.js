@@ -7,7 +7,7 @@ import Voucher from '@/pages/Voucher';
 const publicRoutes = [
     { path: '/', component: Home },
     { path: '/product', component: ProductInfo, layout: HeaderOnly },
-    { path: '/:keysearch', component: Search, layout: HeaderOnly },
+    { path: '/search/:keysearch', component: Search, layout: HeaderOnly },
     { path: '/voucher', component: Voucher, layout: null },
 ];
 const privateRoutes = [];

@@ -1,6 +1,6 @@
 function Slidebar() {
     return (
-        <div>
+        <div style={{ width: '25%' }}>
             <h2>Slidebar</h2>
         </div>
     );

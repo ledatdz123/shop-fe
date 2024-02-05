@@ -32,7 +32,7 @@ function SearchHeader({ options }) {
             }}
             onSelect={(value) => {
                 console.log('select value', value);
-                navigate(`/${value}`);
+                navigate(`/search/${value}`);
             }}
             size="large"
         >

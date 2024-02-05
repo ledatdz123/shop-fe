@@ -336,10 +336,6 @@ function Header() {
         },
     ];
     const [search, setSearch] = useState('');
-    const onSearch = (value, _e, info) => {
-        console.log(info?.source, value);
-        setSearch(value);
-    };
     console.log('search', search);
     const options = [
         {
@@ -420,7 +416,7 @@ function Header() {
                             alignItems: 'center',
                         }}
                     >
-                        <div>
+                        <div onClick={() => navigate('/')}>
                             <Image src={UserImage} preview={false} width={'50px'} height={'100%'}></Image>
                             <Image src={UserImage} preview={false} width={'50px'} height={'100%'}></Image>
                             <Image src={UserImage} preview={false} width={'50px'} height={'100%'}></Image>
